@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Projects by Miguel-Vernard Pinpin – Web Developer portfolio projects including e-commerce, task management, and more."/>
+  <title>Projects | MVP Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">MVP</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <span class="section-tag reveal">My Work</span>
+      <h1 class="reveal delay-1">Featured <span class="accent">Projects</span></h1>
+      <p class="reveal delay-2">Each project is built with purpose — solving real problems with clean code and thoughtful design.</p>
+    </div>
+  </section>
+
+  <!-- FILTER -->
+  <section class="section" style="padding-bottom:0;">
+    <div class="section-inner">
+      <div class="filter-bar reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="react">React</button>
+        <button class="filter-btn" data-filter="php">PHP</button>
+        <button class="filter-btn" data-filter="html">HTML/CSS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projectsSection">
+    <div class="section-inner">
+
+      <!-- PROJECT 1 -->
+      <div class="project-card reveal" data-category="react">
+        <div class="project-visual" style="background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);">
+          <div class="project-num">01</div>
+          <div class="project-screens">
+            <div class="screen screen-1">
+              <div class="screen-ui">
+                <div class="ui-bar"></div>
+                <div class="ui-grid"><div></div><div></div><div></div><div></div></div>
+              </div>
+            </div>
+            <div class="screen screen-2">
+              <div class="screen-ui">
+                <div class="ui-card"></div>
+                <div class="ui-card"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MongoDB</span>
+          </div>
+          <h2>E-commerce Website</h2>
+          <p class="project-desc">A fully responsive e-commerce platform with a complete product catalog, shopping cart, secure checkout, and an admin panel for managing products, orders, and users.</p>
+          <h4>Key Features</h4>
+          <ul class="project-features">
+            <li>User authentication & session management</li>
+            <li>Dynamic product filtering & search</li>
+            <li>Shopping cart with quantity updates</li>
+            <li>Admin dashboard with sales analytics</li>
+            <li>Mobile-first responsive design</li>
+          </ul>
+          <h4>Technologies Used</h4>
+          <div class="project-tech-row">
+            <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>CSS3</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="btn btn-primary" target="_blank">Live Demo</a>
+            <a href="#" class="btn btn-ghost" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-card project-card-alt reveal" data-category="react">
+        <div class="project-visual" style="background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);">
+          <div class="project-num">02</div>
+          <div class="project-screens">
+            <div class="screen screen-1">
+              <div class="screen-ui">
+                <div class="ui-bar"></div>
+                <div class="ui-tasks">
+                  <div class="ui-task done"></div>
+                  <div class="ui-task"></div>
+                  <div class="ui-task"></div>
+                </div>
+              </div>
+            </div>
+            <div class="screen screen-2">
+              <div class="screen-ui" style="flex-direction:row;gap:6px;">
+                <div style="flex:1;background:rgba(255,255,255,.05);border-radius:4px;"></div>
+                <div style="flex:1;background:rgba(255,255,255,.08);border-radius:4px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Redux</span>
+            <span class="project-tag">CSS3</span>
+          </div>
+          <h2>Task Management App</h2>
+          <p class="project-desc">A productivity web application for creating, organizing, and tracking tasks with drag-and-drop functionality, real-time updates, and collaboration features.</p>
+          <h4>Key Features</h4>
+          <ul class="project-features">
+            <li>Drag-and-drop task reordering</li>
+            <li>Kanban board with custom columns</li>
+            <li>Priority labels & due date reminders</li>
+            <li>Team collaboration & task assignment</li>
+            <li>Dark mode interface</li>
+          </ul>
+          <h4>Technologies Used</h4>
+          <div class="project-tech-row">
+            <span>React</span><span>Redux</span><span>DnD Kit</span><span>LocalStorage</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="btn btn-primary" target="_blank">Live Demo</a>
+            <a href="#" class="btn btn-ghost" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 -->
+      <div class="project-card reveal" data-category="html">
+        <div class="project-visual" style="background: linear-gradient(135deg,#0d0d0d,#1a0533,#2d0052);">
+          <div class="project-num">03</div>
+          <div class="project-screens">
+            <div class="screen screen-1">
+              <div class="screen-ui">
+                <div class="ui-bar"></div>
+                <div class="ui-hero" style="height:40px;background:rgba(99,102,241,.2);border-radius:4px;margin-bottom:8px;"></div>
+                <div class="ui-grid"><div></div><div></div><div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project-info">
+          <div class="project-meta">
+            <span class="project-tag">HTML5</span>
+            <span class="project-tag">CSS3</span>
+            <span class="project-tag">PHP</span>
+          </div>
+          <h2>Portfolio Website</h2>
+          <p class="project-desc">A personal portfolio website that uses grid-based design, animated CSS transitions, and responsive layouts to professionally present projects, skills, and contact information.</p>
+          <h4>Key Features</h4>
+          <ul class="project-features">
+            <li>Fully responsive multi-page layout</li>
+            <li>CSS animations & scroll reveal effects</li>
+            <li>Functional PHP contact form</li>
+            <li>SEO metadata & semantic HTML</li>
+            <li>Optimized performance & accessibility</li>
+          </ul>
+          <h4>Technologies Used</h4>
+          <div class="project-tech-row">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>PHP</span>
+          </div>
+          <div class="project-actions">
+            <a href="#" class="btn btn-primary" target="_blank">Live Demo</a>
+            <a href="#" class="btn btn-ghost" target="_blank">GitHub Repo</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 class="reveal">Have a project in <span class="accent">mind?</span></h2>
+      <p class="reveal delay-1">Let's collaborate and bring your ideas to life.</p>
+      <a href="contact.html" class="btn btn-primary reveal delay-2">Let's Talk</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="logo">MVP</span><p>Miguel-Vernard Pinpin<br/>Web Developer</p></div>
+      <div class="footer-links"><span>Quick Links</span><a href="index.html">Home</a><a href="about.html">About</a><a href="projects.html">Projects</a><a href="resume.html">Resume</a><a href="contact.html">Contact</a></div>
+      <div class="footer-contact"><span>Contact</span><a href="mailto:miggypin1218@gmail.com">miggypin1218@gmail.com</a><a href="tel:+639154206241">+63 976 430 6941</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Miguel-Vernard Pinpin. All rights reserved.</p></div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

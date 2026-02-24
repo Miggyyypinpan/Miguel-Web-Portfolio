@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Miguel-Vernard Pinpin – Web Developer & UI/UX Enthusiast. Portfolio showcasing projects, skills, and expertise in web development."/>
+  <meta name="keywords" content="web developer, UI/UX, portfolio, HTML, CSS, JavaScript, React"/>
+  <meta name="author" content="Miguel-Vernard Pinpin"/>
+  <title>MVP | Miguel-Vernard Pinpin – Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">MVP</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="code-rain" id="codeRain"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal">Hello, I'm</p>
+      <h1 class="hero-name reveal delay-1">Miguel-Vernard<br/><span class="accent">Pinpin</span></h1>
+      <p class="hero-role reveal delay-2">Web Developer <span class="sep">|</span> <span class="accent-soft">UI/UX Enthusiast</span></p>
+      <p class="hero-desc reveal delay-3">Informational Technology student passionate about web development and UI/UX design. Eager to apply classroom knowledge to real-world projects and continuously learn new technologies.</p>
+      <div class="hero-btns reveal delay-4">
+        <a href="projects.html" class="btn btn-primary">View Projects</a>
+        <a href="contact.html" class="btn btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-scroll reveal delay-5">
+        <span>Scroll Down</span>
+        <div class="scroll-line"></div>
+      </div>
+    </div>
+    <div class="hero-card reveal delay-3">
+      <div class="card-badge">Available for hire</div>
+      <div class="card-stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">Projects</span></div>
+      <div class="card-stat"><span class="stat-num" data-target="4">0</span><span class="stat-label">Skills</span></div>
+      <div class="card-stat"><span class="stat-num" data-target="1">0</span><span class="stat-label">Year Exp.</span></div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="section featured-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">Portfolio</span>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <p class="section-sub">A selection of work that showcases my capabilities in design and development.</p>
+      </div>
+      <div class="featured-grid">
+
+        <div class="feat-card reveal">
+          <div class="feat-img" style="background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);">
+            <div class="feat-overlay">
+              <span class="feat-tech">React</span>
+              <span class="feat-tech">Node.js</span>
+              <span class="feat-tech">MongoDB</span>
+            </div>
+          </div>
+          <div class="feat-body">
+            <h3>E-commerce Website</h3>
+            <p>A fully responsive e-commerce platform with product catalog, shopping cart, checkout, and user admin panel built with React and Node.js.</p>
+            <div class="feat-links">
+              <a href="projects.html" class="btn-sm">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="feat-card reveal delay-1">
+          <div class="feat-img" style="background: linear-gradient(135deg,#1a1a2e,#16213e,#0f3460);">
+            <div class="feat-overlay">
+              <span class="feat-tech">React</span>
+              <span class="feat-tech">CSS3</span>
+              <span class="feat-tech">Redux</span>
+            </div>
+          </div>
+          <div class="feat-body">
+            <h3>Task Management App</h3>
+            <p>A productivity web app for creating, organizing, and tracking tasks with drag-and-drop and real-time updates.</p>
+            <div class="feat-links">
+              <a href="projects.html" class="btn-sm">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="feat-card reveal delay-2">
+          <div class="feat-img" style="background: linear-gradient(135deg,#0d0d0d,#1a0533,#2d0052);">
+            <div class="feat-overlay">
+              <span class="feat-tech">HTML</span>
+              <span class="feat-tech">CSS</span>
+              <span class="feat-tech">PHP</span>
+            </div>
+          </div>
+          <div class="feat-body">
+            <h3>Portfolio Website</h3>
+            <p>A personal portfolio that uses grid-based design, animated transitions, and responsive layouts to present projects and skills.</p>
+            <div class="feat-links">
+              <a href="projects.html" class="btn-sm">View Details →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="center-link">
+        <a href="projects.html" class="btn btn-outline">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS STRIP -->
+  <section class="skills-strip">
+    <div class="strip-inner">
+      <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>PHP</span><span>MySQL</span><span>Git</span><span>Figma</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React</span><span>PHP</span><span>MySQL</span><span>Git</span><span>Figma</span>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+      <h2 class="reveal">Let's build something <span class="accent">great</span> together.</h2>
+      <p class="reveal delay-1">Open to internship opportunities, freelance projects, and collaborative learning.</p>
+      <a href="contact.html" class="btn btn-primary reveal delay-2">Start a Conversation</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo">MVP</span>
+        <p>Miguel-Vernard Pinpin<br/>Web Developer</p>
+      </div>
+      <div class="footer-links">
+        <span>Quick Links</span>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <span>Contact</span>
+        <a href="mailto:miggypin1218@gmail.com">miggypin1218@gmail.com</a>
+        <a href="tel:+639154206241">+63 976 430 6941</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Miguel-Vernard Pinpin. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
