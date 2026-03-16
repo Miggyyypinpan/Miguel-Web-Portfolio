@@ -1,0 +1,31 @@
+# Dependencies
+mvp-ng/node_modules/
+mvp-ng/package-lock.json
+
+# Angular cache
+mvp-ng/angular/
+mvp-ng/.angular/
+
+# Build outputs
+mvp-ng/dist/
+mvp-ng/dist-ssr/
+mvp-ng/tmp/
+mvp-ng/out-tsc/
+
+# Testing
+mvp-ng/coverage/
+mvp-ng/reports/
+mvp-ng/*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Environment files
+mvp-ng/.env
+mvp-ng/.env.local
