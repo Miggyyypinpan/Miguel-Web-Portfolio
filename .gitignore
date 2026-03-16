@@ -29,3 +29,5 @@ Thumbs.db
 # Environment files
 mvp-ng/.env
 mvp-ng/.env.local
+# Local Netlify folder
+.netlify
