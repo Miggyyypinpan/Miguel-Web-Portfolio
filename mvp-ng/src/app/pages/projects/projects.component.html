@@ -1,0 +1,66 @@
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow" appReveal>My Work</span>
+    <h1 appReveal [revealDelay]="0.1">Featured<br/><em>Projects.</em></h1>
+    <p appReveal [revealDelay]="0.2">Built with purpose — from collaborative platforms to user-centered mobile experiences.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-tabs" appReveal>
+      <button class="filter-tab" *ngFor="let f of filters"
+        [class.active]="activeFilter === f.value"
+        (click)="setFilter(f.value)">{{ f.label }}</button>
+    </div>
+    <div class="proj-list">
+      <div class="proj-block" [class.alt]="isAlt(i)"
+           *ngFor="let proj of filtered; let i = index"
+           appReveal [revealDelay]="0.08">
+        <div class="proj-visual" [style.background]="proj.gradient">
+          <div class="proj-num">{{ proj.num }}</div>
+          <div class="proj-mock">
+            <div class="proj-mock-bar" style="width:55%"></div>
+            <div class="proj-mock-block"></div>
+            <div class="proj-mock-row">
+              <div class="proj-mock-card"></div>
+              <div class="proj-mock-card"></div>
+            </div>
+            <div class="proj-mock-bar" style="width:35%"></div>
+          </div>
+        </div>
+        <div class="proj-info">
+          <div class="proj-tags">
+            <span class="proj-tag" *ngFor="let t of proj.tags">{{ t }}</span>
+          </div>
+          <span class="proj-role">{{ proj.role }}</span>
+          <h2 class="proj-title">{{ proj.title }}</h2>
+          <p class="proj-desc">{{ proj.description }}</p>
+          <span class="proj-feats-label">Key Features</span>
+          <ul class="proj-feats">
+            <li *ngFor="let f of proj.features">{{ f }}</li>
+          </ul>
+          <div class="proj-techs">
+            <span class="proj-tech" *ngFor="let t of proj.tech">{{ t }}</span>
+          </div>
+          <div class="proj-actions">
+            <a [href]="proj.demoUrl" target="_blank" class="btn btn-primary">Live Demo</a>
+            <a [href]="proj.repoUrl" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+      <div class="empty" *ngIf="filtered.length === 0">No projects found.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 appReveal>Got a project in mind?</h2>
+    <p appReveal [revealDelay]="0.1">Let's collaborate and bring your ideas to life.</p>
+    <div class="cta-btns" appReveal [revealDelay]="0.2">
+      <a routerLink="/contact" class="btn btn-primary">Let's Talk</a>
+      <a [href]="p.personal.github" target="_blank" rel="noopener" class="btn btn-outline">GitHub →</a>
+    </div>
+  </div>
+</section>

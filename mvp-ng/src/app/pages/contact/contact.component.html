@@ -1,0 +1,87 @@
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow" appReveal>Reach Out</span>
+    <h1 appReveal [revealDelay]="0.1">Get In<br/><em>Touch.</em></h1>
+    <p appReveal [revealDelay]="0.2">Have a project, opportunity, or just want to say hello? My inbox is always open.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-layout">
+
+    <!-- FORM -->
+    <div appReveal>
+      <span class="eyebrow">Send a Message</span>
+      <h2 class="contact-head">Let's start a<br/><em>conversation</em></h2>
+      <p class="contact-sub">Fill out the form and I'll get back to you within 24 hours.</p>
+
+      <form class="c-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-2col">
+          <div class="c-field">
+            <label for="name" class="c-label">Name</label>
+            <input id="name" type="text" class="c-input" formControlName="name"
+              placeholder="Your Name" [class.err]="isInvalid('name')"/>
+            <span class="c-error" *ngIf="isInvalid('name')">{{ getError('name') }}</span>
+          </div>
+          <div class="c-field">
+            <label for="email" class="c-label">Email</label>
+            <input id="email" type="email" class="c-input" formControlName="email"
+              placeholder="your@email.com" [class.err]="isInvalid('email')"/>
+            <span class="c-error" *ngIf="isInvalid('email')">{{ getError('email') }}</span>
+          </div>
+        </div>
+        <div class="c-field">
+          <label for="subject" class="c-label">Subject</label>
+          <input id="subject" type="text" class="c-input" formControlName="subject"
+            placeholder="Project Inquiry" [class.err]="isInvalid('subject')"/>
+          <span class="c-error" *ngIf="isInvalid('subject')">{{ getError('subject') }}</span>
+        </div>
+        <div class="c-field">
+          <label for="message" class="c-label">Message</label>
+          <textarea id="message" class="c-input c-textarea" rows="6" formControlName="message"
+            placeholder="Tell me about your project or idea..." [class.err]="isInvalid('message')"></textarea>
+          <span class="c-error" *ngIf="isInvalid('message')">{{ getError('message') }}</span>
+        </div>
+        <button type="submit" class="btn btn-primary c-submit" [disabled]="sending">
+          {{ sending ? 'Sending...' : 'Send Message' }}
+        </button>
+        <div class="c-success" [class.show]="showSuccess">
+          ✓ Message sent successfully. I'll be in touch soon.
+        </div>
+      </form>
+    </div>
+
+    <!-- INFO -->
+    <div appReveal [revealDelay]="0.15">
+      <div class="info-cards">
+        <div class="info-card" *ngFor="let item of contactItems">
+          <div class="info-ico">{{ item.icon }}</div>
+          <div>
+            <span class="info-k">{{ item.key }}</span>
+            <a *ngIf="item.href" [href]="item.href" class="info-v link">{{ item.val }}</a>
+            <span *ngIf="!item.href" class="info-v">{{ item.val }}</span>
+          </div>
+        </div>
+      </div>
+
+      <span class="social-lbl">Find me online</span>
+      <div class="social-list">
+        <a *ngFor="let s of socialLinks"
+           [href]="s.url" target="_blank" rel="noopener" class="social-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="s-svg">
+            <path [attr.d]="svgPath(s.icon)"/>
+          </svg>
+          <span>{{ s.label }}</span>
+        </a>
+      </div>
+
+      <div class="avail-card">
+        <div class="avail-dot"></div>
+        <div>
+          <strong>Currently Available</strong>
+          <p>Open to internships, freelance projects, and full-time roles in web development &amp; UI/UX design.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

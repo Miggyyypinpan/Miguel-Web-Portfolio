@@ -1,0 +1,114 @@
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      
+      <h1 class="hero-name" appReveal [revealDelay]="0.1">
+        Miguel-<br/>
+        <em>Vernard</em>
+        Pinpin.
+      </h1>
+      <div class="hero-role" appReveal [revealDelay]="0.18">
+        <span class="hero-role-bar"></span>
+        <span>Web Developer &amp; UI/UX Enthusiast</span>
+      </div>
+      <p class="hero-bio" appReveal [revealDelay]="0.22">
+        BS Information Technology student at Holy Angel University,
+        building purposeful interfaces and user-centered experiences
+        from Angeles, Pampanga.
+      </p>
+      <div class="hero-btns" appReveal [revealDelay]="0.28">
+        <a routerLink="/projects" class="btn btn-primary">View Work</a>
+        <a routerLink="/contact"  class="btn btn-outline">Get in Touch</a>
+        <a [href]="p.personal.github" target="_blank" rel="noopener" class="btn-link">GitHub →</a>
+      </div>
+    </div>
+
+    <!-- Stat Card -->
+    <div class="hero-card" appReveal [revealDelay]="0.2">
+      <span class="hc-eyebrow">At a glance</span>
+      <div class="hc-stats">
+        <div class="hc-stat" *ngFor="let s of stats">
+          <span class="hc-num">{{ s.value }}<em>+</em></span>
+          <span class="hc-nlabel">{{ s.label }}</span>
+        </div>
+      </div>
+      <div class="hc-div"></div>
+      <div class="hc-meta">
+        <div class="hc-row"><span class="hc-key">School</span><span class="hc-val">Holy Angel University</span></div>
+        <div class="hc-row"><span class="hc-key">Org</span><span class="hc-val">Code Geeks</span></div>
+        <div class="hc-row"><span class="hc-key">Location</span><span class="hc-val">Pampanga, PH</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS STRIP -->
+<div class="skills-strip">
+  <div class="strip-track">
+    <span *ngFor="let s of p.stripSkills">{{ s }}</span>
+  </div>
+</div>
+
+<!-- FEATURED PROJECTS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow" appReveal>Selected Work</span>
+      <h2 class="section-title" appReveal [revealDelay]="0.1">Featured Projects</h2>
+      <p class="section-sub" appReveal [revealDelay]="0.2">Work built with purpose — from collaborative platforms to user-centered mobile experiences.</p>
+    </div>
+    <div class="feat-grid">
+      <a routerLink="/projects" class="feat-card" *ngFor="let proj of p.projects; let i = index" appReveal [revealDelay]="i * 0.1">
+        <div class="feat-thumb" [style.background]="proj.gradient">
+          <div class="feat-overlay">
+            <span class="feat-tag" *ngFor="let t of proj.tags">{{ t }}</span>
+          </div>
+        </div>
+        <div class="feat-body">
+          <span class="feat-role">{{ proj.role }}</span>
+          <h3>{{ proj.title }}</h3>
+          <p>{{ proj.description }}</p>
+          <span class="btn-link">View Details →</span>
+        </div>
+      </a>
+    </div>
+    <div class="center" appReveal>
+      <a routerLink="/projects" class="btn btn-outline">All Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section awards-home-section">
+  <div class="container awards-home-grid">
+    <div appReveal>
+      <span class="eyebrow">Recognition</span>
+      <h2 class="section-title">Awards &amp;<br/><em>Achievements</em></h2>
+      <p class="section-sub" style="margin-bottom:2rem;">Dean's Lister, academic honors, and a Volleyball champion — driven by more than just code.</p>
+      <a routerLink="/about" class="btn btn-outline">About Me →</a>
+    </div>
+    <div class="award-rows" appReveal [revealDelay]="0.15">
+      <div class="award-row-item" *ngFor="let a of p.awards">
+        <span class="ari-icon">{{ a.icon }}</span>
+        <div class="ari-text">
+          <strong>{{ a.title }}</strong>
+          <span>{{ a.org }}</span>
+        </div>
+        <span class="ari-arrow">→</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 appReveal>Have something in mind?</h2>
+    <p appReveal [revealDelay]="0.1">Open to internships, freelance projects, and full-time roles in web development &amp; UI/UX design.</p>
+    <div class="cta-btns" appReveal [revealDelay]="0.2">
+      <a routerLink="/contact" class="btn btn-primary">Start a Conversation</a>
+      <a [href]="p.personal.github" target="_blank" rel="noopener" class="btn btn-outline">GitHub →</a>
+    </div>
+  </div>
+</section>

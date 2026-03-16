@@ -1,0 +1,108 @@
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="eyebrow" appReveal>Career</span>
+    <h1 appReveal [revealDelay]="0.1">My<br/><em>Résumé.</em></h1>
+    <p appReveal [revealDelay]="0.2">A timeline of my professional journey, education, and achievements.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container resume-layout">
+    <!-- MAIN -->
+    <div class="resume-main">
+      <div class="resume-chapter" appReveal>
+        <p class="chapter-title">Experience</p>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <p class="tl-date">June 2024 – Present</p>
+            <h3 class="tl-title">Website Development Member</h3>
+            <p class="tl-org">Code Geeks, Holy Angel University · Angeles, Pampanga</p>
+            <ul class="tl-list">
+              <li>Attended conferences and events on software development and emerging technologies</li>
+              <li>Contributed to UI/UX design initiatives and digital innovation projects</li>
+              <li>Expanded technical knowledge through workshops and industry collaboration</li>
+              <li>Collaborated with team members on web development projects and code reviews</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-chapter" appReveal>
+        <p class="chapter-title">Education</p>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <p class="tl-date">June 2023 – Present</p>
+            <h3 class="tl-title">BS Information Technology — Web Development</h3>
+            <p class="tl-org">Holy Angel University · Angeles, Pampanga</p>
+            <p class="tl-detail">Currently pursuing a degree focused on full-stack web development, emphasizing technical implementation and user-centered design.</p>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot"></div>
+            <p class="tl-date">Graduated 2023</p>
+            <h3 class="tl-title">High School Graduate with Honors</h3>
+            <p class="tl-org">Basic Academy of International Studies · Nevada</p>
+            <p class="tl-detail">Graduated with academic distinction. GPA of 3.5.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-chapter" appReveal>
+        <p class="chapter-title">Projects</p>
+        <div class="timeline">
+          <div class="tl-item" *ngFor="let proj of p.projects">
+            <div class="tl-dot"></div>
+            <p class="tl-date">{{ proj.role }}</p>
+            <h3 class="tl-title">{{ proj.title }}</h3>
+            <p class="tl-detail">{{ proj.description }}</p>
+            <div class="tag-row" style="margin-top:0.6rem;display:flex;flex-wrap:wrap;gap:0.4rem;">
+              <span class="tag-sm" *ngFor="let t of proj.tags">{{ t }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="resume-sidebar">
+      <div class="sidebar-card" appReveal>
+        <span class="sidebar-label">Download</span>
+        <a href="assets/Pinpin_Resume.pdf" class="btn btn-primary dl-btn" download="Pinpin_Resume.pdf">↓ Download Resume</a>
+      </div>
+      <div class="sidebar-card" appReveal>
+        <span class="sidebar-label">Core Skills</span>
+        <div class="skill-tags">
+          <span class="skill-tag" *ngFor="let s of p.resumeSkills">{{ s }}</span>
+        </div>
+      </div>
+      <div class="sidebar-card" appReveal>
+        <span class="sidebar-label">Awards</span>
+        <div class="awards-s">
+          <div class="award-s" *ngFor="let a of p.awards">
+            <span class="award-s-ico">{{ a.icon }}</span>
+            <div>
+              <strong>{{ a.title }}</strong>
+              <small>{{ a.org }}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-card" appReveal>
+        <span class="sidebar-label">Languages</span>
+        <div class="lang-rows">
+          <div class="lang-row" *ngFor="let l of languages">
+            <span class="lang-name">{{ l.name }}</span>
+            <span class="lang-badge" [class]="l.cls">{{ l.level }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar-card certs-card" appReveal>
+        <span class="sidebar-label">Certifications</span>
+        <span class="certs-big">{{ p.certificates.length }}</span>
+        <p class="certs-sub">verified certificates across Simplilearn, Cisco, HubSpot &amp; freeCodeCamp</p>
+        <a routerLink="/about" fragment="certs" class="btn-link" style="margin-top:0.8rem;display:inline-flex;">View All →</a>
+      </div>
+    </div>
+  </div>
+</section>
