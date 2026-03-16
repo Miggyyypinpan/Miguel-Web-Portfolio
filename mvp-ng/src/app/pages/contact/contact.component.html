@@ -48,6 +48,9 @@
         <div class="c-success" [class.show]="showSuccess">
           ✓ Message sent successfully. I'll be in touch soon.
         </div>
+        <div class="c-error-message" [class.show]="showError">
+          ✗ {{ errorMessage }}
+        </div>
       </form>
     </div>
 

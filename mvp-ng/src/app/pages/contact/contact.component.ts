@@ -16,6 +16,11 @@ export class ContactComponent {
   sending     = false;
   submitted   = false;
   showSuccess = false;
+  showError = false;        // Added for error messages
+  errorMessage = '';        // Added for error messages
+
+  // Formspree endpoint - replace 'your-form-id' with your actual Formspree form ID
+  private formspreeEndpoint = 'https://formspree.io/f/xkoqqqjj'; 
 
   contactItems = [
     { icon: '✉', key: 'Email',    val: 'miggypin1218@gmail.com', href: 'mailto:miggypin1218@gmail.com' },
@@ -58,14 +63,50 @@ export class ContactComponent {
   onSubmit(): void {
     this.submitted = true;
     if (this.form.invalid) return;
+    
     this.sending = true;
-    setTimeout(() => {
+    this.showSuccess = false;
+    this.showError = false;
+
+    // Prepare form data for Formspree
+    const formData = {
+      name: this.form.get('name')?.value,
+      email: this.form.get('email')?.value,
+      subject: this.form.get('subject')?.value,
+      message: this.form.get('message')?.value
+    };
+
+    // Send to Formspree
+    fetch(this.formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        this.showSuccess = true;
+        this.form.reset();
+        this.submitted = false;
+        // Hide success message after 5 seconds
+        setTimeout(() => this.showSuccess = false, 5000);
+      } else {
+        return response.json().then(data => {
+          throw new Error(data.error || 'Failed to send message');
+        });
+      }
+    })
+    .catch(error => {
+      this.showError = true;
+      this.errorMessage = error.message || 'Something went wrong. Please try again.';
+      // Hide error message after 5 seconds
+      setTimeout(() => this.showError = false, 5000);
+    })
+    .finally(() => {
       this.sending = false;
-      this.showSuccess = true;
-      this.form.reset();
-      this.submitted = false;
-      setTimeout(() => this.showSuccess = false, 5000);
-    }, 1700);
+    });
   }
 
   svgPath(icon: string): string {
